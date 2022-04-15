@@ -1,12 +1,11 @@
 require('dotenv').config();
 const { Collection } = require('discord.js')
 const ms = require('ms')
-
+const Timeout = new Collection();
+const prefix = process.env.PREFIX
 
 module.exports = (client, message) => {
-        const Timeout = new Collection();
         if (message.author.bot) return;
-        const prefix = process.env.PREFIX
         if (!message.content.startsWith(prefix)) return;
         const args = message.content.slice(prefix.length).trim().split(' ');
         const cmd = args.shift().toLowerCase();
