@@ -32,7 +32,7 @@ module.exports = {
                 .addField('Độ ẩm:', `${current.humidity}%`, true)
                 .addField('Người yêu:', 'Đéo có', true)
                 .setTimestamp()
-                .setFooter({ text: 'PentHouse' })
+                .setFooter({ text: message.guild.name, iconURL: message.guild.iconURL({ dynamic: true }) })
             message.channel.send({ embeds: [embed] });
         })
     }
